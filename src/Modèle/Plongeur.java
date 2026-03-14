@@ -23,15 +23,15 @@ import javax.swing.ImageIcon;
 /**
  * Représente le rôle du Plongeur dans le jeu L'Île Interdite.
  *
- * <p>Le Plongeur peut traverser librement les tuiles inondées ou sombrées et rejoindre
+ * Le Plongeur peut traverser librement les tuiles inondées ou sombrées et rejoindre
  * la première tuile sèche ou inondée accessible dans n'importe quelle direction.
  * Son déplacement est calculé par un parcours en largeur (BFS) via
- * {@link Tuile#tuilesPlongeurs()}.</p>
+ * {Tuile#tuilesPlongeurs()}.
  *
- * <p>Point de départ : {@link Zone#LaPorteDeFer} — Couleur : Noir.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Point de départ : {Zone#LaPorteDeFer} — Couleur : Noir.
+ * 
+ * Le Plongeur est un aventurier spécialisé dans la navigation à travers les zones inondées. Sa capacité à traverser les tuiles sombées lui permet de rejoindre des zones autrement inaccessibles pour les autres rôles, offrant ainsi une grande flexibilité pour atteindre des objectifs clés du plateau. 
+ * En tant que tel, il est souvent considéré comme un excellent choix pour les joueurs qui souhaitent adopter une approche plus audacieuse et dynamique du jeu, en exploitant les opportunités offertes par les zones submergées pour surprendre leurs adversaires et maximiser leur efficacité.  
  */
 public class Plongeur extends Joueur {
 
@@ -59,8 +59,8 @@ public class Plongeur extends Joueur {
     /**
      * Retourne les tuiles accessibles au Plongeur, en traversant les tuiles inondées et sombrées.
      *
-     * <p>Le résultat est la liste des tuiles atteignables via le BFS de {@link Tuile#tuilesPlongeurs()},
-     * après exclusion des tuiles sombrées (interdites à l'arrivée) et de la position actuelle.</p>
+     * Le résultat est la liste des tuiles atteignables via le BFS de {Tuile#tuilesPlongeurs()},
+     * après exclusion des tuiles sombrées (interdites à l'arrivée) et de la position actuelle.
      *
      * @return liste des tuiles accessibles (inondées ou sèches, hors position actuelle)
      */

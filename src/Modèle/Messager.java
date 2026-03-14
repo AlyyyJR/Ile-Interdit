@@ -24,14 +24,14 @@ import javax.swing.ImageIcon;
 /**
  * Représente le rôle du Messager dans le jeu L'Île Interdite.
  *
- * <p>Le Messager peut donner des cartes trésor à n'importe quel joueur de l'île,
+ * Le Messager peut donner des cartes trésor à n'importe quel joueur de l'île,
  * sans restriction de position (pas besoin d'être sur la même tuile).
- * Cette capacité lui confère une grande flexibilité pour coordonner les échanges.</p>
+ * Cette capacité lui confère une grande flexibilité pour coordonner les échanges.
  *
- * <p>Point de départ : {@link Zone#LaPorteDArgent} — Couleur : Blanc.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Point de départ : {Zone#LaPorteDArgent} — Couleur : Blanc.
+ * 
+ * Le Messager est un aventurier spécialisé dans la communication et la coopération entre les joueurs. Sa capacité à donner des cartes à distance lui permet de faciliter les échanges de ressources, même lorsque les aventuriers sont séparés par des zones inondées ou des obstacles. 
+ * En tant que tel, il est souvent considéré comme un rôle clé pour maintenir une bonne dynamique d'équipe et assurer une gestion efficace des cartes trésor tout au long de la partie. 
  */
 public class Messager extends Joueur {
 
@@ -69,10 +69,10 @@ public class Messager extends Joueur {
     /**
      * Vérifie si le Messager peut donner une carte.
      *
-     * <p>Le don est possible dès qu'il possède au moins une carte trésor non spéciale
-     * (Hélicoptère et Sac de Sable exclus), indépendamment de sa position.</p>
+     * Le don est possible dès qu'il possède au moins une carte trésor non spéciale
+     * (Hélicoptère et Sac de Sable exclus), indépendamment de sa position.
      *
-     * @return {@code true} si au moins une carte trésor normale est en main
+     * @return {true} si au moins une carte trésor normale est en main
      */
     @Override
     public boolean isDonPossible() {

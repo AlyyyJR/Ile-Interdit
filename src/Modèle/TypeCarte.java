@@ -18,16 +18,18 @@ package Modèle;
 /**
  * Énumération des types de cartes présentes dans la pioche Trésor.
  *
- * <p>Le jeu utilise sept types de cartes répartis en trois catégories :</p>
- * <ul>
- *   <li><b>Cartes Trésor</b> (4 couleurs) : collectées par les joueurs pour récupérer les reliques.</li>
- *   <li><b>Cartes Spéciales</b> : l'Hélicoptère permet un déplacement libre,
- *       le Sac de Sable assèche n'importe quelle tuile inondée.</li>
- *   <li><b>Montée des Eaux</b> : fait monter le niveau de l'eau et rebat la défausse inondation.</li>
- * </ul>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Le jeu utilise sept types de cartes répartis en trois catégories :
+ * 
+ *   Cartes Trésor (4 couleurs) : collectées par les joueurs pour récupérer les reliques.
+ *   Cartes Spéciales : l'Hélicoptère permet un déplacement libre,
+ *       le Sac de Sable assèche n'importe quelle tuile inondée.
+ *   Montée des Eaux : fait monter le niveau de l'eau et rebat la défausse inondation.
+ * 
+ * Les cartes trésor sont identifiées par leur couleur et leur relique associée :
+ * Magenta → Cristal Ardent
+ * Grise   → Pierre Sacrée
+ * Cyan    → Calice de l'Onde
+ * Orange  → Statue du Zéphyr
  */
 public enum TypeCarte {
 
@@ -65,7 +67,7 @@ public enum TypeCarte {
      * Retourne une représentation lisible du nom de la carte, avec des espaces
      * insérés avant chaque lettre majuscule.
      *
-     * <p>Exemple : {@code SpécialHélicoptère} → {@code "Spécial Hélicoptère"}</p>
+     * Exemple : {SpécialHélicoptère} → {"Spécial Hélicoptère"}
      *
      * @return le nom de la carte avec espaces
      */

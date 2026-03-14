@@ -29,19 +29,14 @@ import java.awt.*;
 /**
  * Fenêtre graphique associée à un aventurier.
  *
- * <p>Affiche trois zones :</p>
- * <ul>
- *   <li><b>Nord</b> — nom du rôle avec la couleur du joueur en fond ;</li>
- *   <li><b>Centre</b> — les cartes Trésor en main ;</li>
- *   <li><b>Sud</b> — les six boutons d'action (Déplacer, Assécher, Donner,
- *       Prendre Relique, Carte Spéciale, Terminer Tour).</li>
- * </ul>
+ * Affiche trois zones :
+ * Nord — nom du rôle avec la couleur du joueur en fond ;
+ *   Centre — les cartes Trésor en main ;
+ *   Sud — les six boutons d'action (Déplacer, Assécher, Donner,
+ *       Prendre Relique, Carte Spéciale, Terminer Tour).
  *
- * <p>Les boutons sont activés ou désactivés par le contrôleur à chaque début
- * d'action selon les possibilités du joueur actif.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Les boutons sont activés ou désactivés par le contrôleur à chaque début
+ * d'action selon les possibilités du joueur actif.
  */
 public class VueAventurier {
 

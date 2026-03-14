@@ -23,13 +23,14 @@ import javax.swing.ImageIcon;
 /**
  * Représente le rôle du Pilote dans le jeu L'Île Interdite.
  *
- * <p>Le Pilote possède la capacité de voler librement vers n'importe quelle tuile du plateau
- * qui n'est pas dans l'état {@code Sombré}, sans tenir compte de l'adjacence ou des obstacles.</p>
+ * Le Pilote possède la capacité de voler librement vers n'importe quelle tuile du plateau
+ * qui n'est pas dans l'état {Sombré}, sans tenir compte de l'adjacence ou des obstacles.
  *
- * <p>Point de départ : {@link Zone#Heliport} — Couleur : Bleu.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Point de départ : {Zone#Heliport} — Couleur : Bleu.
+ * 
+ * Le Pilote est un aventurier spécialisé dans les déplacements rapides et stratégiques à travers l'île. Sa capacité à voler vers n'importe quelle tuile non sombrée lui permet de contourner les zones inondées et de rejoindre des endroits clés du plateau en un seul mouvement, ce qui peut être crucial pour sauver des reliques ou échapper à des situations dangereuses. 
+ * Cependant, cette capacité ne peut être utilisée qu'une seule fois par tour, ce qui oblige le joueur à planifier soigneusement ses déplacements pour maximiser l'efficacité du Pilote. 
+ * En tant que tel, il est souvent considéré comme un rôle puissant mais nécessitant une bonne gestion pour tirer pleinement parti de ses avantages.
  */
 public class Pilote extends Joueur {
 
@@ -57,8 +58,8 @@ public class Pilote extends Joueur {
     /**
      * Retourne toutes les tuiles du plateau accessibles au Pilote.
      *
-     * <p>Le Pilote peut se déplacer sur n'importe quelle tuile non sombrée,
-     * à l'exception de sa position actuelle.</p>
+     * Le Pilote peut se déplacer sur n'importe quelle tuile non sombrée,
+     * à l'exception de sa position actuelle.
      *
      * @return liste de toutes les tuiles non sombrées, hors position actuelle
      */

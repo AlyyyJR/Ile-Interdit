@@ -21,17 +21,15 @@ package Controleur;
 /**
  * Message de base échangé entre une Vue et l'Observateur (Contrôleur).
  *
- * <p>Chaque message transporte un {@link TypeMessage} qui identifie
+ * Chaque message transporte un {TypeMessage} qui identifie
  * l'action déclenchée par l'utilisateur dans l'interface graphique.
- * Les sous-classes {@link MessageAventurier} et {@link MessagePlateau}
- * enrichissent ce message avec des données contextuelles.</p>
+ * Les sous-classes {MessageAventurier} et {MessagePlateau}
+ * enrichissent ce message avec des données contextuelles.
+ * 
+ * Message
+ * ├── type : TypeMessage
+ * └── aventurier : Joueur (pour identifier le joueur concerné)
  *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
- * @see TypeMessage
- * @see MessageAventurier
- * @see MessagePlateau
- * @see Observateur
  */
 public class Message {
 

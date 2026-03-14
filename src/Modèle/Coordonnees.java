@@ -18,11 +18,13 @@ package Modèle;
 /**
  * Classe immuable représentant une position (ligne, colonne) sur la grille de jeu.
  *
- * <p>Les coordonnées sont définies à la construction et ne peuvent plus être modifiées.
- * L'axe {@code x} correspond à la ligne (0–5) et l'axe {@code y} à la colonne (0–5).</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Les coordonnées sont définies à la construction et ne peuvent plus être modifiées.
+ * L'axe {x} correspond à la ligne (0–5) et l'axe {y} à la colonne (0–5).
+ * Ces coordonnées sont utilisées notamment dans {MessagePlateau} pour indiquer
+ * quelle tuile a été cliquée par l'utilisateur.
+ * Chaque tuile du plateau est associée à des coordonnées uniques, ce qui permet
+ * au contrôleur de localiser précisément les actions du joueur sur le plateau.
+ * Par exemple, la tuile de départ du Pilote est toujours située aux coordonnées (0, 2) correspondant à la zone de l'Héliport.
  */
 public class Coordonnees {
 

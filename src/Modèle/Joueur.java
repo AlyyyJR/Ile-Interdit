@@ -27,17 +27,19 @@ import java.util.*;
 /**
  * Classe abstraite représentant un joueur du jeu L'Île Interdite.
  *
- * <p>Un joueur possède un nom, une couleur, une position sur le plateau, une main de cartes
- * trésor, et une vue graphique associée ({@link VueAventurier}). Cette classe implémente
+ * Un joueur possède un nom, une couleur, une position sur le plateau, une main de cartes
+ * trésor, et une vue graphique associée ({VueAventurier}). Cette classe implémente
  * les actions de base communes à tous les rôles : déplacement, assèchement, don de cartes,
- * prise de relique et utilisation de cartes spéciales.</p>
+ * prise de relique et utilisation de cartes spéciales.
  *
- * <p>Chaque rôle du jeu étend cette classe et peut surcharger les méthodes
- * {@link #listerCasesDispo()}, {@link #listerTuilesAssechables()}, {@link #assecher()}
- * et {@link #donnerCarte()} pour implémenter ses capacités spéciales.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Chaque rôle du jeu étend cette classe et peut surcharger les méthodes
+ * {#listerCasesDispo()}, {#listerTuilesAssechables()}, {#assecher()}
+ * et {#donnerCarte()} pour implémenter ses capacités spéciales.
+ * 
+ * Le point de départ, la couleur et l'image du pion sont définis dans chaque sous-classe.
+ * Chaque joueur est également associé à une vue graphique spécifique, qui est mise à jour
+ * en temps réel lors des actions du joueur (déplacement, assèchement, échanges de cartes, etc.).
+ * En somme, la classe {Joueur} constitue la base du modèle de tous les aventuriers de L'Île Interdite, encapsulant les fonctionnalités communes tout en permettant une grande flexibilité pour les rôles spécifiques. 
  */
 public abstract class Joueur {
 
@@ -75,8 +77,8 @@ public abstract class Joueur {
     /**
      * Initialise un joueur avec son nom et son contrôleur.
      *
-     * <p>La couleur, la position et le point de spawn sont définis à {@code null}
-     * et doivent être renseignés par chaque sous-classe.</p>
+     * La couleur, la position et le point de spawn sont définis à {null}
+     * et doivent être renseignés par chaque sous-classe.
      *
      * @param nom        le nom du joueur (non nul, non vide)
      * @param controleur le contrôleur central du jeu
@@ -213,9 +215,9 @@ public abstract class Joueur {
     /**
      * Liste les tuiles vers lesquelles ce joueur peut se déplacer.
      *
-     * <p>Par défaut, renvoie les tuiles adjacentes (4 directions orthogonales)
-     * qui ne sont pas dans l'état {@code Sombré}. Les sous-classes peuvent surcharger
-     * cette méthode pour ajouter des possibilités spéciales (diagonales, vol libre, etc.).</p>
+     * Par défaut, renvoie les tuiles adjacentes (4 directions orthogonales)
+     * qui ne sont pas dans l'état {Sombré}. Les sous-classes peuvent surcharger
+     * cette méthode pour ajouter des possibilités spéciales (diagonales, vol libre, etc.).
      *
      * @return liste des tuiles accessibles pour un déplacement
      */
@@ -232,8 +234,8 @@ public abstract class Joueur {
     /**
      * Liste les tuiles que ce joueur peut assécher.
      *
-     * <p>Par défaut, inclut la tuile actuelle du joueur et ses tuiles adjacentes
-     * si elles sont dans l'état {@code Inondé}.</p>
+     * Par défaut, inclut la tuile actuelle du joueur et ses tuiles adjacentes
+     * si elles sont dans l'état {Inondé}.
      *
      * @return liste des tuiles asséchables
      */
@@ -276,7 +278,7 @@ public abstract class Joueur {
 
     /**
      * Effectue une action d'assèchement : affiche les tuiles asséchables, attend la sélection
-     * et fait passer la tuile choisie de l'état {@code Inondé} à {@code Sec}.
+     * et fait passer la tuile choisie de l'état {Inondé} à {Sec}.
      */
     public void assecher() {
         ArrayList<Tuile> casesDispo = new ArrayList<>(this.listerTuilesAssechables());
@@ -320,7 +322,7 @@ public abstract class Joueur {
     /**
      * Récupère la relique disponible sur la tuile actuelle, en échange de 4 cartes trésor du bon type.
      *
-     * <p>Les 4 cartes correspondantes sont retirées de la main et envoyées dans la défausse.</p>
+     * Les 4 cartes correspondantes sont retirées de la main et envoyées dans la défausse.
      */
     public void prendreRelique() {
         Color relique = this.getPosition().getReliqueDispo();
@@ -381,8 +383,8 @@ public abstract class Joueur {
     /**
      * Gère l'utilisation d'une carte spéciale (Hélicoptère ou Sac de Sable).
      *
-     * <p>Affiche un menu de sélection si le joueur possède plusieurs cartes spéciales,
-     * retire la carte choisie de la main et déclenche l'action correspondante.</p>
+     * Affiche un menu de sélection si le joueur possède plusieurs cartes spéciales,
+     * retire la carte choisie de la main et déclenche l'action correspondante.
      */
     public void utiliserCarte() {
         ArrayList<CarteTresor> cSpeciales = new ArrayList<>();
@@ -532,7 +534,7 @@ public abstract class Joueur {
     /**
      * Vérifie si le joueur peut se déplacer (au moins une tuile accessible).
      *
-     * @return {@code true} si un déplacement est possible
+     * @return {true} si un déplacement est possible
      */
     public boolean isMvmntPossible() {
         return !this.listerCasesDispo().isEmpty();
@@ -541,7 +543,7 @@ public abstract class Joueur {
     /**
      * Vérifie si le joueur peut assécher au moins une tuile.
      *
-     * @return {@code true} si un assèchement est possible
+     * @return {true} si un assèchement est possible
      */
     public boolean isAssPossible() {
         return !this.listerTuilesAssechables().isEmpty();
@@ -551,7 +553,7 @@ public abstract class Joueur {
      * Vérifie si le joueur peut récupérer la relique de sa tuile actuelle
      * (au moins 4 cartes trésor du bon type en main).
      *
-     * @return {@code true} si la prise de relique est possible
+     * @return {true} si la prise de relique est possible
      */
     public boolean isReliquePossible() {
         Color relique = this.getPosition().getReliqueDispo();
@@ -578,10 +580,10 @@ public abstract class Joueur {
     /**
      * Vérifie si le joueur peut donner une carte à un autre joueur.
      *
-     * <p>Conditions : posséder au moins une carte trésor non spéciale
-     * et partager la même tuile avec au moins un autre joueur.</p>
+     * Conditions : posséder au moins une carte trésor non spéciale
+     * et partager la même tuile avec au moins un autre joueur.
      *
-     * @return {@code true} si le don est possible
+     * @return {true} si le don est possible
      */
     public boolean isDonPossible() {
         boolean aCarte = false;
@@ -599,7 +601,7 @@ public abstract class Joueur {
      * Vérifie si le joueur possède au moins une carte spéciale
      * (Hélicoptère ou Sac de Sable).
      *
-     * @return {@code true} si une carte spéciale est disponible
+     * @return {true} si une carte spéciale est disponible
      */
     public boolean isCSPossible() {
         for (CarteTresor cs : this.getMainJoueur()) {

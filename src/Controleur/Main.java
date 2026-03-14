@@ -18,13 +18,10 @@ package Controleur;
 /**
  * Point d'entrée principal du jeu L'Île Interdite.
  *
- * <p>Instancie le {@link Controleur} — qui initialise les vues et
+ * Instancie le {Controleur} — qui initialise les vues et
  * démarre l'interface graphique — puis lance la boucle de jeu via
- * {@link Controleur#play()}.</p>
+ * {Controleur#play()}.
  *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
- * @see Controleur
  */
 public class Main {
 

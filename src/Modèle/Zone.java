@@ -18,19 +18,20 @@ package Modèle;
 /**
  * Énumération des 24 zones (tuiles nommées) présentes sur le plateau de L'Île Interdite.
  *
- * <p>Chaque constante correspond à un lieu unique dont le nom est encodé en CamelCase sans espaces.
- * La méthode {@link #nomEspace()} permet d'obtenir un affichage lisible avec espaces.</p>
+ * Chaque constante correspond à un lieu unique dont le nom est encodé en CamelCase sans espaces.
+ * La méthode {#nomEspace()} permet d'obtenir un affichage lisible avec espaces.
  *
- * <p>Les zones sont réparties en quatre familles de reliques, identifiables par leur préfixe :</p>
- * <ul>
- *   <li>LAC → relique Magenta (Cristal Ardent)</li>
- *   <li>LET → relique Grise (Pierre Sacrée)</li>
- *   <li>LEP → relique Cyan (Calice de l'Onde)</li>
- *   <li>LEJ → relique Orange (Statue du Zéphyr)</li>
- * </ul>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Les zones sont réparties en quatre familles de reliques, identifiables par leur préfixe :
+ * 
+ *   LAC → relique Magenta (Cristal Ardent)
+ *   LET → relique Grise (Pierre Sacrée)
+ *   LEP → relique Cyan (Calice de l'Onde)
+ *   LEJ → relique Orange (Statue du Zéphyr)
+ * 
+ * Certaines zones sont également spéciales, comme l'Heliport, point de départ du Pilote.
+ * L'énumération {Zone} est un élément central du modèle du jeu, fournissant une identification claire et structurée des différentes tuiles du plateau, ce qui facilite la gestion des déplacements, des actions et des conditions de victoire ou de défaite liées à ces zones. 
+ * Par exemple, le contrôleur peut utiliser les constantes de {Zone} pour vérifier si une tuile spécifique a été inondée ou asséchée, ou pour déterminer si un joueur se trouve sur une zone critique comme l'Heliport. 
+ * En somme, {Zone} joue un rôle clé dans l'organisation et la logique du jeu.
  */
 public enum Zone {
 
@@ -66,7 +67,7 @@ public enum Zone {
      * Retourne une représentation lisible du nom de la zone, avec des espaces
      * insérés avant chaque lettre majuscule non précédée d'une autre majuscule.
      *
-     * <p>Exemple : {@code LePontDesAbimes} → {@code "Le Pont Des Abimes"}</p>
+     * Exemple : {LePontDesAbimes} → {"Le Pont Des Abimes"}
      *
      * @return le nom de la zone avec espaces
      */

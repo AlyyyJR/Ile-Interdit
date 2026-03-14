@@ -25,25 +25,24 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Classe abstraite représentant un observateur dans le patron MVC.
  *
- * <p>Chaque vue connaît un {@code Observateur} et lui transmet des
- * {@link Message} lorsque l'utilisateur interagit. Le contrôleur
- * ({@link Controleur}) étend cette classe et implémente les trois
- * méthodes abstraites de traitement.</p>
+ * Chaque vue connaît un {Observateur} et lui transmet des
+ * {Message} lorsque l'utilisateur interagit. Le contrôleur
+ * {Controleur} étend cette classe et implémente les trois
+ * méthodes abstraites de traitement.
  *
- * <p>La synchronisation entre le thread Swing (EDT) et le thread de jeu
- * principal est assurée par un {@link ReentrantLock} et sa {@link Condition}
- * associée :</p>
- * <ul>
- *   <li>{@link #waitForInput()} bloque le thread courant en attente d'un signal ;</li>
- *   <li>{@link #notifier()} réveille le thread bloqué.</li>
- * </ul>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
- * @see Controleur
- * @see Message
- * @see MessageAventurier
- * @see MessagePlateau
+ * La synchronisation entre le thread Swing (EDT) et le thread de jeu
+ * principal est assurée par un {ReentrantLock} et sa {Condition}
+ * associée :
+ * 
+ *   {#waitForInput()} bloque le thread courant en attente d'un signal ;
+ *   {#notifier()} réveille le thread bloqué.
+ * 
+ * Observateur
+ * ├── update(Message) : reçoit les messages des vues et réagit en conséquence
+ * En somme, {Observateur} est un élément clé du design MVC du jeu, fournissant une interface claire pour la communication entre les vues et le contrôleur, tout en assurant une synchronisation efficace entre les différents threads impliqués dans l'exécution du jeu. 
+ * Par exemple, lorsque le joueur "Aly" clique sur une tuile du plateau, la {VuePlateau} émet un {MessagePlateau} avec les coordonnées de la tuile ciblée. 
+ * Le contrôleur reçoit ce message, traite l'action en fonction du rôle et de la position d'Alice, puis met à jour le modèle et les vues en conséquence. 
+ * Pendant ce temps, le thread de jeu principal est bloqué dans {waitForInput()} en attendant que l'EDT Swing signale que l'action a été traitée, assurant ainsi une coordination fluide entre les interactions utilisateur et la logique du jeu. De cette manière, {Observateur} joue un rôle central dans la gestion des interactions et de la synchronisation dans le jeu, facilitant une expérience utilisateur réactive et cohérente. 
  */
 public abstract class Observateur {
 
@@ -99,10 +98,10 @@ public abstract class Observateur {
     // ==================================================================
 
     /**
-     * Suspend le thread appelant jusqu'à ce que {@link #notifier()} soit invoqué.
+     * Suspend le thread appelant jusqu'à ce que {#notifier()} soit invoqué.
      *
-     * <p>Utilisé pour bloquer le thread de jeu en attente d'une interaction
-     * utilisateur provenant de l'EDT Swing.</p>
+     * Utilisé pour bloquer le thread de jeu en attente d'une interaction
+     * utilisateur provenant de l'EDT Swing.
      */
     public void waitForInput() {
         lock.lock();
@@ -116,10 +115,10 @@ public abstract class Observateur {
     }
 
     /**
-     * Réveille le thread bloqué dans {@link #waitForInput()}.
+     * Réveille le thread bloqué dans {#waitForInput()}.
      *
-     * <p>Appelé depuis l'EDT Swing lorsqu'une interaction utilisateur
-     * a été traitée et que le jeu peut reprendre.</p>
+     * Appelé depuis l'EDT Swing lorsqu'une interaction utilisateur
+     * a été traitée et que le jeu peut reprendre.
      */
     public void notifier() {
         lock.lock();

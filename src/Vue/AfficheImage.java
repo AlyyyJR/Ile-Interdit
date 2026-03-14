@@ -22,12 +22,9 @@ import javax.swing.JPanel;
 /**
  * Panneau affichant une image en fond plein écran.
  *
- * <p>Utilisé comme contenu de fenêtre pour les écrans personnalisés
+ * Utilisé comme contenu de fenêtre pour les écrans personnalisés
  * (fin de partie, inscription…). L'image est chargée depuis un chemin
- * absolu ou relatif sur le disque et étirée pour remplir le panneau.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * absolu ou relatif sur le disque et étirée pour remplir le panneau.
  */
 public class AfficheImage extends JPanel {
 

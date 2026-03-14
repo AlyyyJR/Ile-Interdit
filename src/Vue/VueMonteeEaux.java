@@ -26,12 +26,9 @@ import javax.swing.JPanel;
 /**
  * Fenêtre affichant la carte du niveau d'eau courant.
  *
- * <p>Une image correspondant au niveau (de 1 à 10) est chargée depuis
- * les ressources internes. La méthode {@link #monteDesEaux(int)} permet
- * de mettre à jour l'affichage dynamiquement quand le niveau monte.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Une image correspondant au niveau (de 1 à 10) est chargée depuis
+ * les ressources internes. La méthode {#monteDesEaux(int)} permet
+ * de mettre à jour l'affichage dynamiquement quand le niveau monte.
  */
 public class VueMonteeEaux extends JFrame {
 

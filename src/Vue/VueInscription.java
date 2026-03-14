@@ -31,15 +31,12 @@ import javax.swing.*;
 /**
  * Fenêtre d'inscription des joueurs avant le démarrage d'une partie.
  *
- * <p>Permet de configurer jusqu'à 4 joueurs (nom et rôle), de choisir
+ * Permet de configurer jusqu'à 4 joueurs (nom et rôle), de choisir
  * la difficulté et d'activer le mode debug. Les rôles disponibles sont :
- * Aléatoire, Pilote, Messager, Explorateur, Navigateur, Plongeur, Ingénieur, Vide.</p>
+ * Aléatoire, Pilote, Messager, Explorateur, Navigateur, Plongeur, Ingénieur, Vide.
  *
- * <p>Le bouton « Valider » vérifie l'unicité des rôles non-aléatoires avant
- * d'envoyer un {@link TypeMessage#Valider} au contrôleur.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Le bouton « Valider » vérifie l'unicité des rôles non-aléatoires avant
+ * d'envoyer un {TypeMessage#Valider} au contrôleur.
  */
 public class VueInscription {
 
@@ -410,7 +407,7 @@ public class VueInscription {
     /**
      * Indique si la valeur de rôle donnée représente "Aléatoire" ou "Vide".
      *
-     * <p>Ces deux valeurs sont ignorées lors de la vérification d'unicité des rôles.</p>
+     * Ces deux valeurs sont ignorées lors de la vérification d'unicité des rôles.
      *
      * @param s la valeur à tester
      * @return {@code true} si {@code s} est "Aléatoire" ou "Vide"

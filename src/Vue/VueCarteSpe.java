@@ -29,15 +29,10 @@ import java.util.ArrayList;
 /**
  * Fenêtre de sélection d'une carte spéciale à utiliser.
  *
- * <p>Affiche les cartes spéciales disponibles (Hélicoptère et/ou Sac de Sable)
- * et envoie le message approprié au contrôleur selon le choix du joueur :</p>
- * <ul>
- *   <li>{@link TypeMessage#CarteSpeHelico} pour une carte Hélicoptère</li>
- *   <li>{@link TypeMessage#CarteSpeSac} pour un Sac de Sable</li>
- * </ul>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Affiche les cartes spéciales disponibles (Hélicoptère et/ou Sac de Sable)
+ * et envoie le message approprié au contrôleur selon le choix du joueur :
+ *   {TypeMessage#CarteSpeHelico} pour une carte Hélicoptère
+ *   {TypeMessage#CarteSpeSac} pour un Sac de Sable
  */
 public class VueCarteSpe {
 

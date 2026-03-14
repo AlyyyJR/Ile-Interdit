@@ -29,16 +29,24 @@ import javax.swing.*;
 /**
  * Contrôleur central du jeu « L'Île Interdite ».
  *
- * <p>Orchestre l'intégralité du déroulement de la partie : initialisation des
+ * Orchestre l'intégralité du déroulement de la partie : initialisation des
  * pioches, placement des aventuriers, boucle de jeu, gestion des tours et
- * traitement des messages MVC en provenance des vues.</p>
+ * traitement des messages MVC en provenance des vues.
  *
- * <p>Étend {@link Observateur} pour bénéficier du mécanisme
- * {@code waitForInput()} / {@code notifier()} assurant la synchronisation
- * entre le fil principal et les événements Swing.</p>
+ * Étend {Observateur} pour bénéficier du mécanisme
+ * {waitForInput()} / {notifier()} assurant la synchronisation
+ * entre le fil principal et les événements Swing.
  *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Le contrôleur est le cœur du jeu, coordonnant les interactions entre le modèle (grille, tuiles, cartes, joueurs) et les vues (plateau, aventuriers, cartes, info). 
+ * Il gère la logique de la partie, en s'assurant que les règles sont respectées et que les actions des joueurs ont les conséquences appropriées sur l'état du jeu. 
+ * Par exemple, lorsqu'un joueur choisit de se déplacer ou d'assécher une tuile, le contrôleur vérifie la validité de l'action, met à jour le modèle en conséquence, puis notifie les vues pour qu'elles reflètent ces changements. 
+ * De même, à chaque fin de tour, le contrôleur évalue les conditions de victoire ou de défaite pour déterminer si la partie doit se terminer ou continuer. 
+ * En somme, le contrôleur est un élément central du design MVC du jeu, assurant une gestion fluide et cohérente de toutes les composantes du jeu. 
+ * 
+ * Controleur
+ * ├── play() : boucle principale du jeu, attend les messages des vues
+ * ├── waitForInput() : attend un message d'une vue
+ * └── notifier() : notifie les vues d'un changement d'état du jeu
  */
 public class Controleur extends Observateur {
 
@@ -132,7 +140,7 @@ public class Controleur extends Observateur {
     /** Niveau de difficulté courant (1 = Novice, monte avec la montée des eaux). */
     private int difficulte;
 
-    /** {@code true} si le mode debug est activé. */
+    /** {true} si le mode debug est activé. */
     private boolean modeDebug;
 
     /** Code de fin de jeu : 0 = victoire, 1 = héliport sombré, 2 = mort, 3 = relique perdue, 4 = eau critique. */
@@ -403,7 +411,7 @@ public class Controleur extends Observateur {
     /**
      * Vérifie les quatre conditions de défaite.
      *
-     * @return {@code true} si une condition de défaite est remplie
+     * @return {true} si une condition de défaite est remplie
      */
     private boolean isPartiePerdue() {
         boolean resultat = false;
@@ -470,7 +478,7 @@ public class Controleur extends Observateur {
      * Vérifie la condition de victoire : tous les joueurs réunis sur l'héliport,
      * 4 reliques récupérées et au moins une carte Hélicoptère en main.
      *
-     * @return {@code true} si la condition de victoire est remplie
+     * @return {true} si la condition de victoire est remplie
      */
     private boolean isPartieGagnée() {
         if (grille.getTuile(Zone.Heliport).getLocataires().size() != joueurs.size()) {
@@ -496,7 +504,7 @@ public class Controleur extends Observateur {
     /**
      * Indique si la partie est terminée (victoire ou défaite).
      *
-     * @return {@code true} si la partie est finie
+     * @return {true} si la partie est finie
      */
     private boolean isPartieFinie() {
         return isPartiePerdue() || isPartieGagnée();
@@ -525,7 +533,7 @@ public class Controleur extends Observateur {
 
     /**
      * Fait piocher deux cartes Trésor au joueur actif en fin de tour.
-     * Les cartes « Montée des Eaux » déclenchent immédiatement {@link #monteeEau()}.
+     * Les cartes « Montée des Eaux » déclenchent immédiatement {#monteeEau()}.
      */
     public void piocherCarteTresorFinTour() {
         for (int i = 0; i < 2; i++) {
@@ -644,7 +652,7 @@ public class Controleur extends Observateur {
     }
 
     /**
-     * Marque la relique d'indice {@code i} comme récupérée.
+     * Marque la relique d'indice {i} comme récupérée.
      *
      * @param i l'indice de la relique (0–3)
      */
@@ -673,7 +681,7 @@ public class Controleur extends Observateur {
      * de joueur lorsque le champ correspondant est vide à la validation.
      *
      * @param nomJoueur le libellé du joueur (ex. « Joueur 1 »)
-     * @return le nom saisi, ou {@code null} si la fenêtre est fermée
+     * @return le nom saisi, ou {null} si la fenêtre est fermée
      */
     public String fenetreNom(String nomJoueur) {
         String nom = null;
@@ -793,7 +801,7 @@ public class Controleur extends Observateur {
     }
 
     /**
-     * Instancie un {@link Joueur} du rôle donné et l'ajoute à la liste.
+     * Instancie un {Joueur} du rôle donné et l'ajoute à la liste.
      * Si le rôle est « Vide », aucun joueur n'est créé.
      *
      * @param nom  le nom du joueur
@@ -828,7 +836,7 @@ public class Controleur extends Observateur {
 
     /**
      * Traite les actions déclenchées depuis la vue aventurier (boutons Aller,
-     * Assécher, Donner, etc.) et met à jour {@link #actionChoisie}.
+     * Assécher, Donner, etc.) et met à jour {#actionChoisie}.
      *
      * @param msg le message contenant le type d'action et le joueur concerné
      */
@@ -897,7 +905,7 @@ public class Controleur extends Observateur {
     /**
      * Retourne la dernière tuile cliquée sur le plateau.
      *
-     * @return la tuile cliquée, ou {@code null} si aucune
+     * @return la tuile cliquée, ou {null} si aucune
      */
     public Tuile getLastCase() { return lastCase; }
 }

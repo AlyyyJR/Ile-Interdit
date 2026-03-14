@@ -32,18 +32,13 @@ import java.util.ArrayList;
 /**
  * Fenêtre principale du plateau de jeu.
  *
- * <p>Affiche la grille 6×6 de tuiles sur trois calques superposés :</p>
- * <ol>
- *   <li><b>Tuiles</b> — fond coloré selon l'état (Sec, Inondé) et image de la tuile ;</li>
- *   <li><b>Pions</b> — icônes des joueurs présents sur chaque case ;</li>
- *   <li><b>Boutons</b> — boutons invisibles capturant les clics utilisateur.</li>
- * </ol>
+ * Affiche la grille 6×6 de tuiles sur trois calques superposés :
+ *   Tuiles — fond coloré selon l'état (Sec, Inondé) et image de la tuile ;
+ *   Pions — icônes des joueurs présents sur chaque case ;
+ *   Boutons — boutons invisibles capturant les clics utilisateur.
  *
- * <p>Lors d'une action (déplacement, assèchement…), les tuiles accessibles
- * sont surlignées en vert via {@link #surligner(ArrayList)}.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Lors d'une action (déplacement, assèchement…), les tuiles accessibles
+ * sont surlignées en vert via {#surligner(ArrayList)}.
  */
 public class VuePlateau extends JFrame {
 

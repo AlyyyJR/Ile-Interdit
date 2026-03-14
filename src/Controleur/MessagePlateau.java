@@ -20,15 +20,11 @@ import Modèle.Coordonnees;
 /**
  * Message enrichi transportant les coordonnées d'une case cliquée.
  *
- * <p>Envoyé depuis {@link Vue.VuePlateau} lorsque l'utilisateur clique
- * sur une tuile du plateau. Le type est toujours {@link TypeMessage#ClicPlateau}
- * et les coordonnées désignent la case sélectionnée.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
- * @see Message
- * @see TypeMessage#ClicPlateau
- * @see Modèle.Coordonnees
+ * Envoyé depuis { Vue.VuePlateau} lorsque l'utilisateur clique
+ * sur une tuile du plateau. Le type est toujours {TypeMessage#ClicPlateau}
+ * et les coordonnées désignent la case sélectionnée.
+ *  
+ * En somme, {MessagePlateau} est un élément clé du système de communication entre
  */
 public class MessagePlateau extends Message {
 
@@ -46,7 +42,7 @@ public class MessagePlateau extends Message {
     /**
      * Crée un message plateau avec son type et les coordonnées associées.
      *
-     * @param type le type de message (généralement {@link TypeMessage#ClicPlateau})
+     * @param type le type de message généralement {TypeMessage#ClicPlateau}
      * @param coo  les coordonnées de la tuile cliquée (non nulles)
      */
     public MessagePlateau(TypeMessage type, Coordonnees coo) {

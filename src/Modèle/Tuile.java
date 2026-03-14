@@ -22,20 +22,23 @@ import javax.swing.ImageIcon;
 /**
  * Représente une tuile du plateau de jeu.
  *
- * <p>Une tuile possède un nom de zone ({@link Zone}), un état ({@link Etat}), une position
- * ({@link Coordonnees}) sur la grille et une liste de joueurs présents ({@link Joueur}).
- * Son image graphique est automatiquement mise à jour lors de tout changement d'état.</p>
+ * Une tuile possède un nom de zone ({Zone}), un état ({Etat}), une position
+ * ({Coordonnees}) sur la grille et une liste de joueurs présents ({Joueur}).
+ * Son image graphique est automatiquement mise à jour lors de tout changement d'état.
  *
- * <p>Certaines tuiles contiennent une relique disponible, identifiée par une couleur :</p>
- * <ul>
- *   <li>Magenta → Cristal Ardent (zones préfixées "LAC")</li>
- *   <li>Gray    → Pierre Sacrée (zones préfixées "LET")</li>
- *   <li>Cyan    → Calice de l'Onde (zones préfixées "LEP")</li>
- *   <li>Orange  → Statue du Zéphyr (zones préfixées "LEJ")</li>
- * </ul>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Certaines tuiles contiennent une relique disponible, identifiée par une couleur :
+ * 
+ *   Magenta → Cristal Ardent (zones préfixées "LAC")
+ *   Gray    → Pierre Sacrée (zones préfixées "LET")
+ *   Cyan    → Calice de l'Onde (zones préfixées "LEP")
+ *   Orange  → Statue du Zéphyr (zones préfixées "LEJ")
+ * 
+ * Les tuiles inondées ou sombrées sont traversables par le Plongeur, mais seules les tuiles sèches
+ * sont accessibles aux autres joueurs.
+ * 
+ * En tant qu'élément central du plateau, la classe {Tuile} joue un rôle crucial dans la dynamique du jeu, en déterminant les possibilités de déplacement, d'assèchement et de collecte de reliques pour les joueurs. 
+ * Sa capacité à gérer l'état et les occupants de la tuile permet au contrôleur de vérifier les conditions de victoire ou de défaite, ainsi que d'adapter les stratégies des joueurs en fonction de l'évolution du plateau. 
+ * En somme, la classe {Tuile} est un composant fondamental du modèle du jeu, encapsulant à la fois la logique et la représentation visuelle des cases du plateau.
  */
 public class Tuile {
 
@@ -57,7 +60,7 @@ public class Tuile {
     /** Référence vers la grille parente pour naviguer vers les tuiles adjacentes. */
     private final Grille plateau;
 
-    /** Couleur de la relique disponible sur cette tuile, ou {@code null} si aucune. */
+    /** Couleur de la relique disponible sur cette tuile, ou {null} si aucune. */
     private final Color reliqueDispo;
 
     /** Image graphique représentant l'état visuel actuel de la tuile. */
@@ -93,7 +96,7 @@ public class Tuile {
      * @param etat         l'état initial de la tuile
      * @param grille       la grille de jeu contenant cette tuile
      * @param coo          la position de la tuile sur la grille
-     * @param reliqueDispo la couleur de la relique disponible, ou {@code null}
+     * @param reliqueDispo la couleur de la relique disponible, ou {null}
      */
     public Tuile(Zone nom, Etat etat, Grille grille, Coordonnees coo, Color reliqueDispo) {
         this.intitule     = nom;
@@ -113,7 +116,7 @@ public class Tuile {
      * Détermine la couleur de la relique associée à une zone selon son préfixe.
      *
      * @param zone la zone à analyser
-     * @return la couleur de la relique, ou {@code null} si aucune relique n'est associée
+     * @return la couleur de la relique, ou {null} si aucune relique n'est associée
      */
     private static Color detecterRelique(Zone zone) {
         String prefixe = zone.toString().substring(0, 3).toUpperCase();
@@ -188,7 +191,7 @@ public class Tuile {
     /**
      * Retourne l'état courant de la tuile.
      *
-     * @return l'état ({@code Sec}, {@code Inondé} ou {@code Sombré})
+     * @return l'état ({Sec}, {Inondé} ou {Sombré})
      */
     public Etat getEtat() {
         return etat;
@@ -224,7 +227,7 @@ public class Tuile {
     /**
      * Retourne la couleur de la relique disponible sur cette tuile.
      *
-     * @return la couleur de la relique, ou {@code null} si aucune
+     * @return la couleur de la relique, ou {null} si aucune
      */
     public Color getReliqueDispo() {
         return reliqueDispo;
@@ -246,12 +249,12 @@ public class Tuile {
     /**
      * Met à jour l'image graphique de la tuile en fonction de son état courant.
      *
-     * <p>Les images sont chargées depuis {@code /ImagesTuiles/} :</p>
-     * <ul>
-     *   <li>Sec     → {@code {Zone.name()}.png}</li>
-     *   <li>Inondé  → {@code {Zone.name()}2.png}</li>
-     *   <li>Sombré  → {@code EauSombree.png}</li>
-     * </ul>
+     * Les images sont chargées depuis {/ImagesTuiles/} :
+     * 
+     *   Sec     → {{Zone.name()}.png}
+     *   Inondé  → {{Zone.name()}2.png}
+     *   Sombré  → {EauSombree.png}
+     * 
      */
     public void setImage() {
         if (etat == null) {
@@ -293,7 +296,7 @@ public class Tuile {
     /**
      * Indique si cette tuile est sombrée (inaccessible).
      *
-     * @return {@code true} si l'état est {@code Sombré}
+     * @return {true} si l'état est {Sombré}
      */
     public boolean isSombre() {
         return this.etat == Etat.Sombré;
@@ -324,10 +327,10 @@ public class Tuile {
     /**
      * Calcule l'ensemble des tuiles accessibles par le Plongeur depuis cette tuile.
      *
-     * <p>Le Plongeur peut traverser librement les tuiles inondées et sombrées,
+     * Le Plongeur peut traverser librement les tuiles inondées et sombrées,
      * en se propageant récursivement à partir des tuiles adjacentes non sèches.
      * La collection retournée inclut les tuiles sèches et inondées atteignables,
-     * mais pas les tuiles sombrées (destinations illégales).</p>
+     * mais pas les tuiles sombrées (destinations illégales).
      *
      * @return collection de toutes les tuiles atteignables (y compris la position actuelle)
      */

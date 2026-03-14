@@ -23,13 +23,12 @@ import javax.swing.JOptionPane;
 /**
  * Représente le rôle de l'Ingénieur dans le jeu L'Île Interdite.
  *
- * <p>L'Ingénieur peut assécher deux tuiles par action d'assèchement au lieu d'une seule.
- * Après le premier assèchement, le jeu lui propose d'en effectuer un second gratuitement.</p>
+ * L'Ingénieur peut assécher deux tuiles par action d'assèchement au lieu d'une seule.
+ * Après le premier assèchement, le jeu lui propose d'en effectuer un second gratuitement.
  *
- * <p>Point de départ : {@link Zone#LaPorteDeBronze} — Couleur : Rouge.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Point de départ : {Zone#LaPorteDeBronze} — Couleur : Rouge.
+ * L'Ingénieur est un aventurier spécialisé dans la gestion des zones inondées. Sa capacité à assécher deux tuiles en une seule action lui permet de contrôler plus efficacement les zones critiques du plateau, offrant ainsi une meilleure protection contre les inondations. 
+ * En tant que tel, il est souvent considéré comme un rôle essentiel pour maintenir la stabilité du terrain et faciliter les déplacements des autres aventuriers.  
  */
 public class Ingénieur extends Joueur {
 
@@ -57,8 +56,8 @@ public class Ingénieur extends Joueur {
     /**
      * Effectue jusqu'à deux assèchements en une seule action.
      *
-     * <p>Après le premier assèchement, si des tuiles inondées restent disponibles,
-     * une boîte de dialogue propose à l'Ingénieur d'en assécher une seconde gratuitement.</p>
+     * Après le premier assèchement, si des tuiles inondées restent disponibles,
+     * une boîte de dialogue propose à l'Ingénieur d'en assécher une seconde gratuitement.
      */
     @Override
     public void assecher() {

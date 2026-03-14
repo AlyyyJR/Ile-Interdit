@@ -18,12 +18,14 @@ package Modèle;
 /**
  * Représente une carte de la pioche inondation.
  *
- * <p>Chaque carte est liée à une {@link Tuile} du plateau. Lorsqu'elle est piochée,
- * la tuile associée progresse d'un état ({@code Sec → Inondé → Sombré}).
- * Une carte dont la tuile a sombré est retirée définitivement du jeu.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Chaque carte est liée à une {Tuile} du plateau. Lorsqu'elle est piochée,
+ * la tuile associée progresse d'un état ({Sec → Inondé → Sombré}).
+ * Une carte dont la tuile a sombré est retirée définitivement du jeu.
+ * Les cartes d'inondation sont utilisées par le contrôleur pour faire avancer
+ * l'état des tuiles et pour gérer la dynamique de l'inondation sur le plateau.
+ * Par exemple, si la carte d'inondation ciblant la tuile de l'Héliport est piochée alors que celle-ci est déjà inondée, elle sombrera, ce qui peut compliquer les déplacements du Pilote et rendre la partie plus difficile. 
+ * De même, si une carte d'inondation ciblant une tuile contenant une relique est piochée alors que la tuile est déjà inondée, elle sombrera, ce qui peut rendre la collecte de cette relique plus urgente pour les joueurs. 
+ * En somme, les cartes d'inondation sont un élément clé du gameplay de L'Île Interdite, ajoutant du suspense et des défis à chaque tour de jeu. 
  */
 public class CarteInondation {
 

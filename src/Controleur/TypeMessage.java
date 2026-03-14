@@ -20,16 +20,19 @@ package Controleur;
 /**
  * Énumération des types de messages échangés entre la Vue et le Contrôleur.
  *
- * <p>Les messages permettent à chaque vue d'informer le contrôleur de l'action
- * choisie par l'utilisateur. Ils sont encapsulés dans {@link Message},
- * {@link MessageAventurier} ou {@link MessagePlateau} selon leur nature.</p>
+ * Les messages permettent à chaque vue d'informer le contrôleur de l'action
+ * choisie par l'utilisateur. Ils sont encapsulés dans {Message},
+ * {MessageAventurier} ou {MessagePlateau} selon leur nature.
  *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
- * @see Message
- * @see MessageAventurier
- * @see MessagePlateau
- * @see Controleur
+ * TypeMessage
+ * ├── CLIQUER
+ * ├── DEPLACER
+ * ├── ASSECHER
+ * ├── DONNER
+ * ├── UTILISER
+ * ├── PASSER
+ * └── AUTRE (pour les actions spécifiques à certaines vues)
+ * En somme, {TypeMessage} est un élément clé du système de communication entre les vues et le contrôleur, permettant une identification claire et structurée des différentes actions que les joueurs peuvent déclencher depuis l'interface graphique. Par exemple, lorsque le joueur "Alice" clique sur le bouton "Déplacer" dans sa vue d'aventurier, la {VueAventurier} émet un {MessageAventurier} avec le type {DEPLACER} et la référence au joueur "Alice". Le contrôleur reçoit ce message, identifie que c'est une action de déplacement pour "Alice", vérifie les déplacements possibles pour son rôle et sa position actuelle, puis met à jour le modèle et les vues en conséquence. De cette manière, {TypeMessage} facilite une gestion efficace des interactions des joueurs tout en maintenant une séparation claire entre la logique du jeu et l'interface utilisateur.
  */
 public enum TypeMessage {
 

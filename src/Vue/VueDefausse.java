@@ -26,13 +26,10 @@ import java.util.ArrayList;
 /**
  * Fenêtre de défausse de carte pour un joueur ayant dépassé la limite.
  *
- * <p>S'affiche automatiquement lorsqu'un joueur possède 6 cartes ou plus.
+ * S'affiche automatiquement lorsqu'un joueur possède 6 cartes ou plus.
  * Il doit en sélectionner une à défausser avant de continuer à jouer.
  * La carte choisie est retirée de sa main et ajoutée à la défausse via
- * {@link Joueur#defausserCarte(CarteTresor)}.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * {Joueur#defausserCarte(CarteTresor)}.
  */
 public class VueDefausse {
 

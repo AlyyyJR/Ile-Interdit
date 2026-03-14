@@ -27,18 +27,13 @@ import java.util.ArrayList;
 /**
  * Fenêtre de don de carte entre deux joueurs.
  *
- * <p>Le don se déroule en deux étapes :</p>
- * <ol>
- *   <li>Sélection du joueur receveur parmi ceux présents sur la case
- *       (ou tous, dans le cas du {@link Modèle.Messager}) ;</li>
- *   <li>Sélection de la carte à donner, en excluant les cartes spéciales
- *       (Hélicoptère et Sac de Sable).</li>
- * </ol>
- * <p>Une fois la sélection faite, la carte est transférée via
- * {@link Joueur#donnerCarte(Joueur, CarteTresor)} et l'observateur est notifié.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Le don se déroule en deux étapes :
+ *   Sélection du joueur receveur parmi ceux présents sur la case
+ *       (ou tous, dans le cas du {Modèle.Messager}) ;
+ *   Sélection de la carte à donner, en excluant les cartes spéciales
+ *       (Hélicoptère et Sac de Sable).
+ * Une fois la sélection faite, la carte est transférée via
+ * {Joueur#donnerCarte(Joueur, CarteTresor)} et l'observateur est notifié.
  */
 public class VueDonDeCartes {
 

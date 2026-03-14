@@ -28,20 +28,16 @@ import javax.swing.JPanel;
 /**
  * Fenêtre affichant l'état des quatre reliques à collecter.
  *
- * <p>Chaque relique est initialement représentée par une version grisée.
- * Lorsqu'un joueur collecte une relique, {@link #update(boolean[])} remplace
- * l'image grisée correspondante par sa version colorée.</p>
+ * Chaque relique est initialement représentée par une version grisée.
+ * Lorsqu'un joueur collecte une relique, {#update(boolean[])} remplace
+ * l'image grisée correspondante par sa version colorée.
  *
- * <p>Les quatre reliques, dans l'ordre d'index, sont :</p>
- * <ol>
- *   <li>Calice de l'Onde (Cyan)</li>
- *   <li>Pierre Sacrée (Gray)</li>
- *   <li>Statue du Zéphyr (Orange)</li>
- *   <li>Cristal Ardent (Magenta)</li>
- * </ol>
+ * Les quatre reliques, dans l'ordre d'index, sont :
+ *   Calice de l'Onde (Cyan)
+ *   Pierre Sacrée (Gray)
+ *   Statue du Zéphyr (Orange)
+ *   Cristal Ardent (Magenta)
  *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
  */
 public class VueReliques extends JFrame {
 

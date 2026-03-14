@@ -31,15 +31,10 @@ import java.util.logging.Logger;
 /**
  * Écran d'accueil du jeu « L'Île Interdite ».
  *
- * <p>Affiche trois boutons sur un fond personnalisé :</p>
- * <ul>
- *   <li><b>Jouer</b> — envoie {@link TypeMessage#Jouer} au contrôleur ;</li>
- *   <li><b>Règles</b> — ouvre le fichier PDF des règles ;</li>
- *   <li><b>Quitter</b> — termine l'application.</li>
- * </ul>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Affiche trois boutons sur un fond personnalisé :
+ *   Jouer — envoie {TypeMessage#Jouer} au contrôleur ;
+ *   Règles — ouvre le fichier PDF des règles ;
+ *   Quitter — termine l'application.
  */
 public class VueEcranTitre extends JPanel {
 

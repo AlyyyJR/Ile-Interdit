@@ -22,18 +22,18 @@ import javax.swing.ImageIcon;
 /**
  * Représente le rôle du Navigateur dans le jeu L'Île Interdite.
  *
- * <p>Le Navigateur bénéficie d'une action supplémentaire par tour (4 au lieu de 3),
+ * Le Navigateur bénéficie d'une action supplémentaire par tour (4 au lieu de 3),
  * ce qui lui permet d'agir plus souvent que les autres aventuriers. Cette capacité est
- * gérée par le contrôleur via la couleur distinctive {@link Color#YELLOW}.</p>
+ * gérée par le contrôleur via la couleur distinctive {Color#YELLOW}.
  *
- * <p>Dans les règles officielles du jeu, le Navigateur peut également déplacer d'autres
+ * Dans les règles officielles du jeu, le Navigateur peut également déplacer d'autres
  * joueurs jusqu'à 2 tuiles par action — cette fonctionnalité avancée n'est pas encore
- * implémentée dans la présente version.</p>
+ * implémentée dans la présente version.
  *
- * <p>Point de départ : {@link Zone#LaPorteDOr} — Couleur : Jaune.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Point de départ : {Zone#LaPorteDOr} — Couleur : Jaune.
+ * 
+ * Le Navigateur est un aventurier spécialisé dans la mobilité et la coordination de l'équipe. Sa capacité à effectuer une action supplémentaire par tour lui permet de se déplacer plus fréquemment, ce qui peut être crucial pour atteindre rapidement des zones clés du plateau ou pour réagir efficacement aux inondations. 
+ * En tant que tel, il est souvent considéré comme un rôle stratégique pour les joueurs qui souhaitent maximiser leur influence sur le déroulement de la partie et soutenir leurs coéquipiers de manière proactive.    
  */
 public class Navigateur extends Joueur {
 

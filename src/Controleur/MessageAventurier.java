@@ -20,16 +20,16 @@ import Modèle.Joueur;
 /**
  * Message enrichi transportant une référence au joueur concerné.
  *
- * <p>Envoyé depuis {@link Vue.VueAventurier} chaque fois que l'utilisateur
+ * Envoyé depuis {Vue.VueAventurier} chaque fois que l'utilisateur
  * clique sur un bouton d'action (Déplacer, Assécher, Donner…).
- * Le {@link TypeMessage} indique l'action choisie et le {@link Joueur} désigne
- * le joueur actif dont le panneau a déclenché l'événement.</p>
+ * Le {TypeMessage} indique l'action choisie et le {Joueur} désigne
+ * le joueur actif dont le panneau a déclenché l'événement.
  *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
- * @see Message
- * @see TypeMessage
- * @see Modèle.Joueur
+ * 
+ *MessageAventurier
+ * ├── type : TypeMessage
+ * └── aventurier : Joueur (pour identifier le joueur concerné) 
+ * En somme, {MessageAventurier} est un élément clé du système de communication entre les vues et le contrôleur, permettant une interaction fluide et contextuelle entre l'interface utilisateur et la logique du jeu. Par exemple, lorsque le joueur "Alice" clique sur le bouton "Déplacer", la {VueAventurier} émet un {MessageAventurier} avec le type {DEPLACER} et la référence au joueur "Alice". Le contrôleur reçoit ce message, identifie que c'est "Alice" qui souhaite se déplacer, vérifie les déplacements possibles pour son rôle et sa position actuelle, puis met à jour le modèle et les vues en conséquence. De cette manière, {MessageAventurier} facilite une gestion efficace des actions des joueurs tout en maintenant une séparation claire entre la logique du jeu et l'interface utilisateur. 
  */
 public class MessageAventurier extends Message {
 

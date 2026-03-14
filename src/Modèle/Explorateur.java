@@ -23,18 +23,18 @@ import javax.swing.ImageIcon;
 /**
  * Représente le rôle de l'Explorateur dans le jeu L'Île Interdite.
  *
- * <p>L'Explorateur possède deux capacités spéciales par rapport aux autres aventuriers :</p>
- * <ul>
- *   <li><b>Déplacement en diagonale</b> : peut se déplacer vers les 8 tuiles voisines
- *       (4 orthogonales + 4 diagonales) en une seule action.</li>
- *   <li><b>Assèchement en diagonale</b> : peut assécher non seulement les tuiles adjacentes,
- *       mais aussi les tuiles situées en diagonale.</li>
- * </ul>
+ * L'Explorateur possède deux capacités spéciales par rapport aux autres aventuriers :
+ * 
+ *   Déplacement en diagonale : peut se déplacer vers les 8 tuiles voisines
+ *       (4 orthogonales + 4 diagonales) en une seule action.
+ *   Assèchement en diagonale : peut assécher non seulement les tuiles adjacentes,
+ *       mais aussi les tuiles situées en diagonale.
  *
- * <p>Point de départ : {@link Zone#LaPorteDeCuivre} — Couleur : Vert.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * Point de départ : {Zone#LaPorteDeCuivre} — Couleur : Vert.
+ * 
+ * L'Explorateur est un aventurier polyvalent qui excelle dans la navigation à travers les zones inondées
+ * grâce à sa capacité à se déplacer et assécher en diagonale. Cette flexibilité lui permet de contourner les obstacles et de rejoindre des zones autrement inaccessibles pour les autres rôles. 
+ * En tant que tel, il est souvent considéré comme un excellent choix pour les joueurs qui préfèrent une approche plus stratégique et adaptable du jeu.  
  */
 public class Explorateur extends Joueur {
 
@@ -62,8 +62,8 @@ public class Explorateur extends Joueur {
     /**
      * Retourne les tuiles vers lesquelles l'Explorateur peut se déplacer.
      *
-     * <p>Inclut les tuiles orthogonalement et diagonalement adjacentes
-     * qui ne sont pas dans l'état {@code Sombré}.</p>
+     * Inclut les tuiles orthogonalement et diagonalement adjacentes
+     * qui ne sont pas dans l'état {Sombré}.
      *
      * @return liste des tuiles accessibles (orthogonales + diagonales)
      */
@@ -95,8 +95,8 @@ public class Explorateur extends Joueur {
     /**
      * Retourne les tuiles que l'Explorateur peut assécher.
      *
-     * <p>Inclut les tuiles orthogonalement et diagonalement adjacentes
-     * qui sont dans l'état {@code Inondé}, en plus de la tuile actuelle.</p>
+     * Inclut les tuiles orthogonalement et diagonalement adjacentes
+     * qui sont dans l'état {Inondé}, en plus de la tuile actuelle.
      *
      * @return liste des tuiles asséchables (orthogonales + diagonales)
      */

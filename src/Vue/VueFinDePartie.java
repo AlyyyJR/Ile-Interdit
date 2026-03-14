@@ -35,17 +35,14 @@ import javax.swing.JPanel;
 /**
  * Fenêtre de fin de partie affichant victoire ou défaite.
  *
- * <p>La méthode {@link #update(int)} configure les textes selon le résultat :</p>
- * <ul>
- *   <li><b>0</b> — Victoire : tous les joueurs se sont échappés en hélicoptère</li>
- *   <li><b>1</b> — Défaite : l'héliport a sombré</li>
- *   <li><b>2</b> — Défaite : un aventurier est mort</li>
- *   <li><b>3</b> — Défaite : une relique n'est plus récupérable</li>
- *   <li><b>4</b> — Défaite : le niveau d'eau a atteint le seuil critique</li>
- * </ul>
+ * La méthode {#update(int)} configure les textes selon le résultat :
+ * 
+ *   0 — Victoire : tous les joueurs se sont échappés en hélicoptère
+ *   1 — Défaite : l'héliport a sombré
+ *   2 — Défaite : un aventurier est mort
+ *   3 — Défaite : une relique n'est plus récupérable
+ *   4 — Défaite : le niveau d'eau a atteint le seuil critique
  *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
  */
 public class VueFinDePartie {
 

@@ -20,13 +20,14 @@ import javax.swing.ImageIcon;
 /**
  * Représente une carte de la pioche Trésor.
  *
- * <p>Chaque carte possède un {@link TypeCarte} et une image graphique chargée
+ * Chaque carte possède un {TypeCarte} et une image graphique chargée
  * automatiquement depuis les ressources du projet. Les cartes trésor classiques
- * ({@code Trésor*}) doivent être collectées en quantité de 4 pour récupérer une relique.
- * Les cartes spéciales ({@code Spécial*}) offrent des capacités ponctuelles.</p>
- *
- * @author Aly KONATE &amp; Julien DENIS
- * @version 1.0
+ * {Trésor} doivent être collectées en quantité de 4 pour récupérer une relique.
+ * Les cartes spéciales {Spécial} offrent des capacités ponctuelles.
+ * La carte {MontéeEaux} déclenche une montée du niveau de l'eau et rebat la pioche inondation.
+ * Les cartes sont utilisées par les joueurs pour progresser dans la partie, et leur gestion est centrale dans la stratégie du jeu. Elles peuvent être distribuées, échangées ou défaussées selon les actions des joueurs et les événements du jeu.
+ * Par exemple, un joueur peut utiliser une carte Hélicoptère pour déplacer un groupe d'aventuriers vers une tuile éloignée, ou une carte Sac de Sable pour assécher une tuile inondée critique. La carte Montée des Eaux, quant à elle, peut bouleverser la partie en augmentant le niveau de l'eau et en réintroduisant des tuiles inondées dans la pioche, ce qui peut forcer les joueurs à adapter rapidement leur stratégie pour éviter de perdre la partie. 
+ * En somme, les cartes trésor sont un élément clé du gameplay de L'Île Interdite, offrant à la fois des opportunités et des défis pour les joueurs tout au long de la partie. 
  */
 public class CarteTresor {
 
@@ -46,7 +47,7 @@ public class CarteTresor {
     /**
      * Crée une carte trésor du type spécifié et charge son image depuis les ressources.
      *
-     * <p>L'image est recherchée dans {@code /ImagesCartesTresor/{type.name()}.png}.</p>
+     * L'image est recherchée dans {/ImagesCartesTresor/{type.name()}.png}.
      *
      * @param type le type de la carte (non nul)
      */
