@@ -463,7 +463,7 @@ java -version      # Java 17 minimum requis
 
 ```bash
 # Se placer à la racine du projet
-cd PJ-Ile-Interdite-POGL-KONATE-DENIS-G1/
+cd Île-Interdite/
 
 # Compiler toutes les classes Java
 javac -sourcepath src -d out $(find src -name "*.java")
