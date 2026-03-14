@@ -59,11 +59,11 @@ L'île est composée de **24 tuiles nommées** disposées sur une grille 6×6. L
 ```
          Col 0   Col 1   Col 2   Col 3   Col 4   Col 5
 Ligne 0   ~~~     ~~~    [T01]   [T02]    ~~~     ~~~
-Ligne 1   ~~~    [T03]   [T04]  [T05]   [T06]    ~~~
-Ligne 2  [T07]   [T08]   [T09]  [T10]   [T11]   [T12]
-Ligne 3  [T13]   [T14]   [T15]  [T16]   [T17]   [T18]
-Ligne 4   ~~~    [T19]   [T20]  [T21]   [T22]    ~~~
-Ligne 5   ~~~     ~~~    [T23]  [T24]    ~~~     ~~~
+Ligne 1   ~~~    [T03]   [T04]   [T05]   [T06]    ~~~
+Ligne 2  [T07]   [T08]   [T09]   [T10]   [T11]   [T12]
+Ligne 3  [T13]   [T14]   [T15]   [T16]   [T17]   [T18]
+Ligne 4   ~~~    [T19]   [T20]   [T21]   [T22]    ~~~
+Ligne 5   ~~~     ~~~    [T23]   [T24]    ~~~     ~~~
 
 ~~~  = eau (case vide, jamais accessible)
 [Txx] = tuile nommée (Sec / Inondé / Sombré)
